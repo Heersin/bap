@@ -334,7 +334,7 @@ let export = Primus.Lisp.Type.Spec.[
 
     "fround", tuple [sym; any] @-> any,
     "(fround M X) rounds X to the closest integral floating-point
-    number, using the rounding mode M";
+    number, using the rounding mode M, see IEEE754 2008 paragraph 5.9 roundToIntegral";
 
     "cast-float", tuple [sym; int; any] @-> any,
     "(cast-float M S X) converts an unsigned integer X to the nearest
@@ -347,11 +347,11 @@ let export = Primus.Lisp.Type.Spec.[
     mode M";
 
     "cast-int", tuple [sym; int; any] @-> any,
-    "(cast-float M S X) converts a floating-point number X to the nearest
+    "(cast-int M S X) converts a floating-point number X to the nearest
     unsigned integer with the size S using the rounding mode M ";
 
     "cast-sint", tuple [sym; int; any] @-> any,
-    "(cast-float M S X) converts a floating-point number X to the nearest
+    "(cast-sint M S X) converts a floating-point number X to the nearest
     signed integer with the size S using the rounding mode M ";
   ]
 

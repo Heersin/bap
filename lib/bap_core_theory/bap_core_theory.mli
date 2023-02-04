@@ -2983,7 +2983,7 @@ module Theory : sig
     (** [eq x y] holds if [x] and [y] are bitwise equal.  *)
     val eq  : 'a bitv -> 'a bitv -> bool
 
-    (** [eq x y] holds if [x] and [y] are not bitwise equal.  *)
+    (** [neq x y] holds if [x] and [y] are not bitwise equal.  *)
     val neq : 'a bitv -> 'a bitv -> bool
 
     (** [slt x y] signed strict less than. *)
@@ -3001,7 +3001,7 @@ module Theory : sig
     (** [sge x y] signed greater or equal than. *)
     val sge : 'a bitv -> 'a bitv -> bool
 
-    (** [sge x y] signed greater or equal than. *)
+    (** [uge x y] signed greater or equal than. *)
     val uge : 'a bitv -> 'a bitv -> bool
   end
 
@@ -3186,7 +3186,7 @@ module Theory : sig
         the positive infinity then [fsqrt x] is the positive infinity. *)
     val fsqrt   : rmode -> 'f float -> 'f float
 
-    (** [fdiv m x y] is the floating-point number closest to the
+    (** [fmodulo m x y] is the floating-point number closest to the
         remainder of [x/y].  *)
     val fmodulo : rmode -> 'f float -> 'f float -> 'f float
 
@@ -3201,11 +3201,11 @@ module Theory : sig
     (** [fconvert f r x] is the closest to [x] floating number in format [f].  *)
     val fconvert : 'f Float.t Value.sort ->  rmode -> _ float -> 'f float
 
-    (** [fsucc m x] is the least floating-point number representable
+    (** [fsucc x] is the least floating-point number representable
         in (sort x) that is greater than [x].  *)
     val fsucc  : 'f float -> 'f float
 
-    (** [fsucc m x] is the greatest floating-point number representable
+    (** [fpred x] is the greatest floating-point number representable
         in (sort x) that is less than [x].  *)
     val fpred  : 'f float -> 'f float
 
